@@ -4,7 +4,7 @@ require_once 'config.php';
 // Handle logout redirect
 if (isset($_GET['logout'])) {
     session_destroy();
-    header('Location: admin.php');
+    header('Location: adminpanel.php');
     exit;
 }
 
@@ -607,7 +607,7 @@ $isLogged = isAdmin();
             </a>
         </nav>
         <div class="sidebar-footer">
-            <a href="admin.php?logout=1" class="logout-btn">
+            <a href="adminpanel.php?logout=1" class="logout-btn">
                 <i class="fas fa-sign-out-alt"></i> Déconnexion
             </a>
         </div>

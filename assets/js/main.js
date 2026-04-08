@@ -9,10 +9,9 @@ function toggleTheme() {
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-    const icon = document.querySelector('.theme-toggle i');
-    if (icon) {
+    document.querySelectorAll('.theme-toggle i').forEach(icon => {
         icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
+    });
 }
 
 // ============================================
@@ -261,12 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTranslations();
     startTyping();
 
-    // Theme icon
-    const icon = document.querySelector('.theme-toggle i');
-    if (icon) {
-        const theme = document.documentElement.getAttribute('data-theme');
+    // Theme icons (desktop + mobile)
+    const theme = document.documentElement.getAttribute('data-theme');
+    document.querySelectorAll('.theme-toggle i').forEach(icon => {
         icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
+    });
 
     // Contact form
     const form = document.getElementById('contact-form');

@@ -70,11 +70,17 @@ foreach ($skills_raw as $s) {
             <button class="theme-toggle" onclick="toggleTheme()" title="Changer le thème">
                 <i class="fas fa-sun"></i>
             </button>
-            <a href="admin.php" style="text-decoration:none;">
-                <button class="theme-toggle" title="Admin">
-                    <i class="fas fa-lock"></i>
-                </button>
-            </a>
+        </div>
+        <!-- Controls always visible on mobile -->
+        <div class="nav-controls-mobile">
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="fr" onclick="setLang('fr')">FR</button>
+                <span style="color:var(--text-muted)">|</span>
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Changer le thème">
+                <i class="fas fa-sun" class="mobile-theme-icon"></i>
+            </button>
         </div>
         <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -445,7 +451,6 @@ foreach ($skills_raw as $s) {
                 <a href="#about" data-i18n="nav_about">À propos</a>
                 <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
                 <a href="#contact" data-i18n="nav_contact">Contact</a>
-                <a href="admin.php">Admin</a>
             </div>
         </div>
     </div>
