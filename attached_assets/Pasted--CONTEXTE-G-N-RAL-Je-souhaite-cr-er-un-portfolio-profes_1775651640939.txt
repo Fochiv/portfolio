@@ -1,0 +1,175 @@
+📋 CONTEXTE GÉNÉRAL
+Je souhaite créer un portfolio professionnel moderne et responsive pour présenter mes compétences en tant que professionnel IT, Développeur Web et Designer UI/UX.
+IMPORTANT : mon CV en PDF est dans mes fichiers sur GitHub qui contient des informations complémentaires (expériences, formations, compétences détaillées, projets) que vous devrez extraire et intégrer intelligemment dans le portfolio. Mon GitHub contient aussi quelques images de projets réalisés. Il y’a aussi mon logo je veux l’icone au lieu du logo web sur la barre de navigation. Tu peux aussi ajouter mon logo sur le site si besoin est.
+DESIGN & THÈME
+Thème visuel
+•	Thème par défaut : Mode sombre (dark mode)
+•	Fonctionnalité : Bouton switch pour basculer entre thème sombre et thème clair
+•	Style : Design moderne, épuré, professionnel avec des animations subtiles
+•	Responsive : Parfaitement adapté mobile, tablette et desktop
+Langues
+•	Langue par défaut : Français
+•	Langues disponibles : Français / Anglais
+•	Fonctionnalité : Sélecteur de langue visible (drapeau ou dropdown)
+👤 PAGE UTILISATEUR (FRONTEND PUBLIC)
+1. Section Hero / En-tête
+Éléments à inclure :
+•	Photo de profil professionnelle (format rond ou carré avec bordure)
+•	Statut de disponibilité dynamique :
+o	Badge vert "✓ Disponible" OU Badge rouge "✗ Indisponible"
+o	Ce statut est contrôlable depuis la page Admin
+•	Présentation personnelle :
+•	Bonjour, je suis Ben FOCH
+•	Professionnel IT | Développeur Web | Designer UI/UX
+•	Bouton d'action : "Télécharger mon CV" (télécharge le PDF uploadé depuis l'admin)
+•	Animation : Effet de typing ou fade-in pour le texte de présentation
+2. Section À propos
+•	Courte biographie (extraite du CV)
+•	Années d'expérience
+•	Domaines d'expertise
+•	Compétences clés avec barres de progression ou badges
+3. Section Compétences / Stack Technique
+•	Technologies maîtrisées avec icônes (HTML, CSS, JS, React, Node.js, etc.)
+•	Compet
+•	Languages : PHP, JavaScript, SQL, HTML, CSS, XHTML
+•	Frontend : HTML/CSS, Bootstrap, Responsive Design, UI Layout
+•	Backend : PHP (PDO), MySQL, MS Exchange
+•	Design & UX : Moqups, draw.io, Figma, Wireframes, UML
+•	IT & Hardware: Windows/Linux, PC Setup, Routers/Switches, Troubleshooting, Cisco Basics
+•	Soft Skills: Bilingual EN/FR, Technical writing, Team training
+•	Technologies & Tools
+•	Tools & Automation: VS Code, GitHub, WampServer, Cisco Packet Tracer
+•	AI Tools: ChatGPT, Claude, GitHub Copilot
+•	Certifications
+o	CISCO 
+o	SecNum
+4. Section Portfolio / Réalisations (J’ai ajoute une capture des projets (BenStore, Allianz,Tesla,SourirePaques))
+Affichage des projets :
+•	Grille responsive de cartes de projets (3 colonnes desktop, 2 tablettes, 1 mobile)
+•	Filtres par catégorie : 
+o	Tous les projets
+o	Développement Web
+o	Design Graphique
+o	Projets Réseaux
+Carte projet contient :
+•	Image/screenshot du projet
+•	Nom du projet
+•	Courte description
+•	Technologies/langages utilisés (badges colorés)
+•	Bouton "Voir détails": 
+o	Lien démo (si disponible)
+5. Section Services
+•	Liste des services que vous offrez
+•	Design en cards ou liste avec icônes
+•	Exemples : Développement web, UI/UX Design, Consulting IT, etc.
+6. Section Expérience & Formation
+•	Timeline visuelle des expériences professionnelles (extraites du CV)
+•	Diplômes et certifications
+•	Design moderne avec icônes et dates
+7. Section Témoignages (Ca défile de la gauche vers la droite)
+•	Carrousel de témoignages clients
+•	Note/étoiles
+•	Photo et nom du client
+8. Section Contact
+Informations de contact :
+•	📱 WhatsApp : +237 658 547 295 (avec bouton direct cliquable)
+•	✈️ Telegram : +237 658 547 295 
+o	Lien direct : https://t.me/Justinvestguys (bouton "Contactez-moi sur Telegram")
+•	📧 Email : aldofoch@gmail.com (bouton mailto)
+•	Linkdle : https://www.linkedin.com/in/ben-foch-511525393/
+•	Github : Fochiv
+•	📍 Localisation : Dschang, Cameroun
+Formulaire de contact :
+•	Champs : Nom, Email, Sujet, Message
+•	Bouton "Envoyer"
+•	Validation des champs
+•	Message de confirmation après envoi
+•	Envoi des messages vers votre email
+Réseaux sociaux :
+•	Liens vers LinkedIn, GitHub, Twitter, etc. 
+•	Icônes modernes avec effet hover
+9. Footer
+Conçu et développé par Ben FOCH © 2026. Tous droits réservés.
+•	Liens rapides vers les sections
+•	Icônes réseaux sociaux
+•	Bouton pour retourner rapidement au début de la page
+🔐 PAGE ADMIN (BACKEND SÉCURISÉ)
+Authentification
+•	Page de connexion sécurisée (email + mot de passe)
+•	Bouton de déconnexion
+Dashboard Admin
+1. Gestion du Profil
+•	Upload/modifier photo de profil
+o	Prévisualisation avant upload
+o	Formats acceptés : JPG, PNG (max 5MB)
+o	Recadrage automatique en format carré
+•	Statut de disponibilité
+o	Toggle switch : Disponible / Indisponible
+o	Mise à jour en temps réel sur la page publique
+•	Upload/modifier CV (PDF)
+o	Drag & drop ou bouton upload
+o	Format accepté : PDF uniquement (max 10MB)
+o	Remplacement de l'ancien CV automatique
+o	Prévisualisation du PDF uploadé
+2. Gestion des Projets/Réalisations
+Ajouter un nouveau projet :
+•	Formulaire avec champs : 
+o	Nom du projet (obligatoire)
+o	Catégorie (dropdown) : Développement Web / Design Graphique / Projets Réseaux
+o	Description courte (150 caractères max)
+o	Technologies/Langages utilisés (tags multiples)
+o	Upload d'images (1 image principale)
+o	Lien démo (optionnel)
+o	Statut : Publié / Brouillon
+Gérer les projets existants :
+•	Liste de tous les projets avec aperçu
+•	Actions : Modifier / Supprimer / Dupliquer
+•	Recherche et filtres
+•	Réorganisation par drag & drop (ordre d'affichage)
+3. Gestion du Contenu
+•	Modifier les compétences
+o	Ajouter/supprimer des compétences
+o	Modifier le niveau de maîtrise
+•	Gérer les services offerts
+4. Messages de Contact
+•	Affichage des messages reçus via le formulaire de contact
+•	Marquer comme lu/non lu
+•	Supprimer
+•	Notification par email lors d'un nouveau message
+5. Paramètres
+•	Modifier mot de passe admin
+•	Informations de contact (WhatsApp, Telegram, Email)
+•	Analytics/Statistiques du site (visiteurs, clics, etc.)
+🛠️ SPÉCIFICATIONS TECHNIQUES
+Technologies recommandées
+Frontend :
+•	HTML, CSS, PHP, JAVASCRIPT, BOOSTRAP, SQL uniquement compatible avec Wampserver si je veux travailler en local.
+📂 DOCUMENTS FOURNI (Dans mon github)
+1.	CV en PDF - Contient :
+o	Expériences professionnelles détaillées
+o	Formations et diplômes
+o	Compétences techniques complètes
+o	Certifications
+o	Projets réalisés (à intégrer dans la section Portfolio)
+o	Langues parlées
+o	Centres d'intérêt
+2.	Photo de profil professionnelle 
+3.	Logos/images des projets
+🎯 OBJECTIFS DU PORTFOLIO
+1.	Présenter professionnellement mes compétences et réalisations
+2.	Faciliter le contact avec des clients/recruteurs potentiels
+3.	Démontrer mes capacités en développement et design
+4.	Être facilement maintenable via l'interface admin
+5.	Être performant et responsive sur tous les appareils
+6.	Être multilingue (FR/EN)
+📝 NOTES IMPORTANTES POUR LE DÉVELOPPEUR IA
+•	Extraire intelligemment les informations du CV (Qui est sur mon Github)
+•	Proposer un design moderne et professionnel cohérent
+•	Assurer une navigation fluide et intuitive
+•	Utiliser des animations subtiles (pas trop agressives)
+•	Le code doit être propre, commenté et facilement maintenable
+DATE DE LIVRAISON SOUHAITÉE : [À définir]
+CONTACT POUR QUESTIONS : aldofoch@gmail.com
+
+Tu peux ensuite ajouter d’autres trucs que tu juges utiles. 
+
