@@ -1,0 +1,30 @@
+Options -Indexes
+
+# Protection du fichier de configuration
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protection de la base de données SQLite (si présente)
+<Files "*.sqlite">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Encodage UTF-8 par défaut
+AddDefaultCharset UTF-8
+
+# Compression GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache des ressources statiques
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png  "access plus 1 month"
+    ExpiresByType text/css   "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

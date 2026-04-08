@@ -1,13 +1,16 @@
 <?php
-define('DB_PATH', __DIR__ . '/database.sqlite');
+define('DB_HOST', 'sql305.iceiy.com');
+define('DB_NAME', 'icei_41611066_portfolio_benfoch');
+define('DB_USER', 'icei_41611066');
+define('DB_PASS', '1214161820Ben');
 
 function getDB() {
     static $db = null;
     if ($db === null) {
-        $db = new PDO('sqlite:' . DB_PATH);
+        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4';
+        $db = new PDO($dsn, DB_USER, DB_PASS);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $db->exec("PRAGMA journal_mode=WAL");
     }
     return $db;
 }

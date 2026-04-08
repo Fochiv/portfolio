@@ -101,7 +101,7 @@ if ($action === 'update_setting') {
     if (!in_array($key, $allowed)) {
         jsonResponse(['success' => false, 'error' => 'Clé non autorisée.'], 400);
     }
-    $stmt = $db->prepare("INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)");
+    $stmt = $db->prepare("INSERT INTO `settings` (`key`, `value`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`)");
     $stmt->execute([$key, $value]);
     jsonResponse(['success' => true]);
 }
@@ -124,7 +124,7 @@ if ($action === 'change_password') {
         jsonResponse(['success' => false, 'error' => 'Nouveau mot de passe trop court (min 6 chars).'], 400);
     }
     $newHash = password_hash($new, PASSWORD_DEFAULT);
-    $stmt2 = $db->prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('admin_password', ?)");
+    $stmt2 = $db->prepare("INSERT INTO `settings` (`key`, `value`) VALUES ('admin_password', ?) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`)");
     $stmt2->execute([$newHash]);
     jsonResponse(['success' => true]);
 }
@@ -146,7 +146,7 @@ if ($action === 'upload_photo') {
     $filename = 'profile_' . time() . '.' . $ext;
     $dest = 'uploads/profiles/' . $filename;
     if (move_uploaded_file($file['tmp_name'], $dest)) {
-        $stmt = $db->prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('profile_photo', ?)");
+        $stmt = $db->prepare("INSERT INTO `settings` (`key`, `value`) VALUES ('profile_photo', ?) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`)");
         $stmt->execute([$dest]);
         jsonResponse(['success' => true, 'path' => $dest]);
     }
@@ -167,7 +167,7 @@ if ($action === 'upload_cv') {
     }
     $dest = 'uploads/cvs/cv_' . time() . '.pdf';
     if (move_uploaded_file($file['tmp_name'], $dest)) {
-        $stmt = $db->prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('cv_file', ?)");
+        $stmt = $db->prepare("INSERT INTO `settings` (`key`, `value`) VALUES ('cv_file', ?) ON DUPLICATE KEY UPDATE `value`=VALUES(`value`)");
         $stmt->execute([$dest]);
         jsonResponse(['success' => true, 'path' => $dest]);
     }
