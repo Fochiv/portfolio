@@ -7,7 +7,7 @@ $db = getDB();
 // Get settings
 function getSetting($key) {
     global $db;
-    $stmt = $db->prepare("SELECT value FROM settings WHERE key = ?");
+    $stmt = $db->prepare("SELECT value FROM settings WHERE `key` = ?");
     $stmt->execute([$key]);
     return $stmt->fetchColumn() ?: '';
 }

@@ -186,4 +186,6 @@ if ($count == 0) {
     }
 }
 
-echo "Base de données MySQL initialisée avec succès.\n";
+if (php_sapi_name() === 'cli') {
+    echo "Base de données MySQL initialisée avec succès.\n";
+}

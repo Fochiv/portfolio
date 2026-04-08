@@ -31,7 +31,7 @@ if ($action === 'send_message') {
 // ============================================
 if ($action === 'get_settings') {
     $settings = [];
-    $rows = $db->query("SELECT key, value FROM settings WHERE key IN ('availability','cv_file','profile_photo')")->fetchAll();
+    $rows = $db->query("SELECT `key`, value FROM settings WHERE `key` IN ('availability','cv_file','profile_photo')")->fetchAll();
     foreach ($rows as $row) {
         $settings[$row['key']] = $row['value'];
     }
@@ -45,11 +45,11 @@ if ($action === 'admin_login') {
     $email    = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
 
-    $stmt = $db->prepare("SELECT value FROM settings WHERE key = 'admin_email'");
+    $stmt = $db->prepare("SELECT value FROM settings WHERE `key` = 'admin_email'");
     $stmt->execute();
     $storedEmail = $stmt->fetchColumn();
 
-    $stmt2 = $db->prepare("SELECT value FROM settings WHERE key = 'admin_password'");
+    $stmt2 = $db->prepare("SELECT value FROM settings WHERE `key` = 'admin_password'");
     $stmt2->execute();
     $storedHash = $stmt2->fetchColumn();
 
@@ -79,7 +79,7 @@ if (!isAdmin()) {
 // ============================================
 if ($action === 'get_dashboard') {
     $settings = [];
-    $rows = $db->query("SELECT key, value FROM settings")->fetchAll();
+    $rows = $db->query("SELECT `key`, value FROM settings")->fetchAll();
     foreach ($rows as $r) $settings[$r['key']] = $r['value'];
 
     $projects  = $db->query("SELECT COUNT(*) FROM projects WHERE status='published'")->fetchColumn();
@@ -113,7 +113,7 @@ if ($action === 'change_password') {
     $current = $_POST['current_password'] ?? '';
     $new     = $_POST['new_password'] ?? '';
 
-    $stmt = $db->prepare("SELECT value FROM settings WHERE key = 'admin_password'");
+    $stmt = $db->prepare("SELECT value FROM settings WHERE `key` = 'admin_password'");
     $stmt->execute();
     $hash = $stmt->fetchColumn();
 

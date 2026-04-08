@@ -554,7 +554,7 @@ $isLogged = isAdmin();
     $db2 = getDB();
     function getSetting2($key) {
         global $db2;
-        $stmt = $db2->prepare("SELECT value FROM settings WHERE key = ?");
+        $stmt = $db2->prepare("SELECT value FROM settings WHERE `key` = ?");
         $stmt->execute([$key]);
         return $stmt->fetchColumn() ?: '';
     }
